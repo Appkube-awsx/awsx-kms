@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"github.com/Appkube-awsx/awsx-kms/command"
+	"github.com/Appkube-awsx/awsx-kms/commands"
 	"github.com/Appkube-awsx/awsx-common/authenticate"
 	"github.com/Appkube-awsx/awsx-common/client"
 	"github.com/aws/aws-sdk-go/service/kms"
@@ -27,7 +27,7 @@ func GetKmsByFlagAndClientAuth(authFlag bool, clientAuth *client.Auth, err error
 		log.Println(err.Error())
 		return nil, err
 	}
-	response, err := command.ListKeys(*clientAuth)
+	response, err := commands.ListKeys(*clientAuth)
 	if err != nil {
 		log.Println(err.Error())
 		return nil, err
@@ -36,7 +36,7 @@ func GetKmsByFlagAndClientAuth(authFlag bool, clientAuth *client.Auth, err error
 }
 
 func GetKms(clientAuth *client.Auth) (*kms.ListKeysOutput, error) {
-	response, err := command.ListKeys(*clientAuth)
+	response, err := commands.ListKeys(*clientAuth)
 	if err != nil {
 		log.Println(err.Error())
 		return nil, err
