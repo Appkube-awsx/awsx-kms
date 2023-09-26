@@ -1,9 +1,9 @@
 module github.com/Appkube-awsx/awsx-kms
 
-go 1.20
+go 1.19
 
 require (
-	github.com/aws/aws-sdk-go v1.44.255
+	github.com/aws/aws-sdk-go v1.45.9
 	github.com/spf13/cobra v1.7.0
 )
 
